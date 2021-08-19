@@ -1,0 +1,60 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZHR_FIO_REQ_DOWN_SRV" xml:lang="ru" sap:schema-version="1">
+            <EntityType Name="Request" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Numb"/>
+                </Key>
+                <Property Name="Numb" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Номер заявки" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rdate" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Дата согласования" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ename" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="ФИО" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Approver" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Согласующий" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rtime" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Время" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Идентификатор" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ид.Статуса" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Табельный номер" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kaltg" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Календарные дни" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Begda" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Дата начала отсутств" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Namea" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Вид отсутствия" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Endda" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Дата" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plnam" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Должность" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orgnam" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Название ОЕ" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="List" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Numb"/>
+                </Key>
+                <Property Name="Ename" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="ИмяСотр/Канд" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Type" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Идентификатор" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Табельный номер" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rtime" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Время" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rdate" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Дата начала отсутств" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Namea" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Вид отсутствия" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Numb" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Номер заявки" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stnam" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Наименование статуса" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Perfname" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Исполнитель" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToRequest" Relationship="ZHR_FIO_REQ_DOWN_SRV.ListToRequest" FromRole="FromRole_ListToRequest" ToRole="ToRole_ListToRequest"/>
+            </EntityType>
+            <Association Name="ListToRequest" sap:content-version="1">
+                <End Type="ZHR_FIO_REQ_DOWN_SRV.List" Multiplicity="1" Role="FromRole_ListToRequest"/>
+                <End Type="ZHR_FIO_REQ_DOWN_SRV.Request" Multiplicity="1" Role="ToRole_ListToRequest"/>
+            </Association>
+            <EntityContainer Name="ZHR_FIO_REQ_DOWN_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="RequestSet" EntityType="ZHR_FIO_REQ_DOWN_SRV.Request" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ListSet" EntityType="ZHR_FIO_REQ_DOWN_SRV.List" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="ListToRequestSet" Association="ZHR_FIO_REQ_DOWN_SRV.ListToRequest" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ListSet" Role="FromRole_ListToRequest"/>
+                    <End EntitySet="RequestSet" Role="ToRole_ListToRequest"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZHR_FIO_REQ_DOWN_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZHR_FIO_REQ_DOWN_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

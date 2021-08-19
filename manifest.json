@@ -1,0 +1,149 @@
+{
+    "_version": "1.9.0",
+    "sap.app": {
+        "id": "ZHR_GRADE.ZHR_GRADE",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZHR_KPI_APP_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+            "pepService": {
+                "uri": "/sap/opu/odata/sap/ZHR_FIO_SES_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        },
+        "sourceTemplate": {
+            "id": "sap.ui.ui5-template-plugin.1worklist",
+            "version": "1.52.7"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://task",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "ZHR_GRADE.ZHR_GRADE.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.42.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {},
+                "sap.ushell": {},
+                "sap.collaboration": {
+                    "lazy": true
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "ZHR_GRADE.ZHR_GRADE.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true
+            },
+            "pep": {
+                "dataSource": "pepService",
+                "preload": true
+            }
+        },
+        "services": {
+            "ShellUIService": {
+                "factoryName": "sap.ushell.ui5service.ShellUIService",
+                "lazy": false,
+                "settings": {
+                    "setTitle": "auto"
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "ZHR_GRADE.ZHR_GRADE.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": [
+                        "notFound"
+                    ]
+                },
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": ":year:",
+                    "name": "worklist",
+                    "target": [
+                        "worklist"
+                    ]
+                }
+            ],
+            "targets": {
+                "worklist": {
+                    "viewName": "Worklist",
+                    "viewId": "worklist",
+                    "viewLevel": 1,
+                    "title": "{parts:['i18n>appName', 'Year'], formatter: 'jQuery.sap.formatMessage'}"
+                },
+                "notFound": {
+                    "viewName": "NotFound",
+                    "viewId": "notFound"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "resourceRoots": {
+            "fragment": "./fragment"
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zhr_grade",
+        "_version": "1.1.0"
+    }
+}
